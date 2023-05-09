@@ -24,7 +24,7 @@ class _SearchPageState extends State<SearchPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                TextField(
+                TextFormField(
                   controller: searchController,
                   onEditingComplete:()async{
                     newsModel=await CustomeHttpRequest.fetchSearchData(searchController.text);
@@ -169,6 +169,7 @@ class _SearchPageState extends State<SearchPage> {
     "Football",
     "Cricket",
     "Sports",
-    "Politics"
+    "Politics",
+    "Pepsi"
   ];
 }
