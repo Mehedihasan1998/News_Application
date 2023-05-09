@@ -5,6 +5,7 @@ import 'package:newapp/model/news_model.dart';
 
 class CustomeHttpRequest {
   static Future<NewsModel> fetchHomeData(int pageNo,String sortBy) async {
+    int a=0;
     NewsModel? newsModel;
     try{
       String url = "https://newsapi.org/v2/everything?q=football&sortBy=$sortBy&pageSize=10&page=$pageNo&apiKey=dae4eb4267724b77b9831c0f448decaa";
