@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:newapp/model/news_model.dart';
+import 'package:newapp/pages/web_view_page.dart';
 
 class NewsDetails extends StatelessWidget {
   NewsDetails({Key? key,this.articles}) : super(key: key);
@@ -29,9 +30,35 @@ class NewsDetails extends StatelessWidget {
         ],
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("${articles!.description}"),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text("${articles!.title}", style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+          ),
           Image.network('${articles!.urlToImage}'),
+          // Row(
+          //   children: [
+          //     Text("${articles!.author}"),
+          //     SizedBox(width: 20,),
+          //     Text("${articles!.publishedAt}"),
+          //   ],
+          // ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("${articles!.publishedAt}"),
+                Text("${articles!.description}", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),),
+                SizedBox(height: 10,),
+                Text("${articles!.content}"),
+                InkWell(
+
+                    child: Text("see more", style: TextStyle(color: Colors.blue,),)),
+              ],
+            ),
+          )
         ],
       ),
     );
