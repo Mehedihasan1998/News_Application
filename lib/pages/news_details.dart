@@ -24,9 +24,9 @@ class NewsDetails extends StatelessWidget {
       appBar: AppBar(
         title: Text("${articles!.source!.name ?? ""}"),
         actions: [
-          IconButton(onPressed: (){
-            share();
-          }, icon: Icon(Icons.share))
+          // IconButton(onPressed: (){
+          //   share();
+          // }, icon: Icon(Icons.share))
         ],
       ),
       body: Column(
