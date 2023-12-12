@@ -4,10 +4,10 @@ import 'package:newapp/model/news_model.dart';
 
 
 class CustomeHttpRequest {
-  static Future<NewsModel> fetchHomeData(int pageNo,String sortBy) async {
+  static Future<NewsModel> fetchHomeData(int pageNo) async {
     NewsModel? newsModel;
     try{
-      String url = "https://newsapi.org/v2/everything?q=football&sortBy=$sortBy&pageSize=10&page=$pageNo&apiKey=dae4eb4267724b77b9831c0f448decaa";
+      String url = "https://newsapi.org/v2/everything?q=football&pageSize=10&page=$pageNo&apiKey=dae4eb4267724b77b9831c0f448decaa";
 
       var responce = await http.get(Uri.parse(url));
       var data = jsonDecode(responce.body);

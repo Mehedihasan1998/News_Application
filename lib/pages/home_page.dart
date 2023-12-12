@@ -24,9 +24,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("News App"),
-        actions: [IconButton(onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SearchPage()));
-        }, icon: Icon(Icons.search))],
+        actions: [
+        //   IconButton(onPressed: () {
+        //   Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SearchPage()));
+        // }, icon: Icon(Icons.search))
+        ],
       ),
       body: Container(
           padding: EdgeInsets.all(12),
@@ -75,26 +77,24 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: DropdownButton(
-                  value: sortBy,
-                  items: [
-                    DropdownMenuItem(child: Text("publishedAt"),value: "publishedAt"),
-                    DropdownMenuItem(child: Text("popularity"),value:"popularity" ,),
-                    DropdownMenuItem(child: Text("relevancy"),value: "relevancy",),
-
-
-                  ],
-                  onChanged: (value){
-                    setState(() {
-                      sortBy=value!;
-                    });
-                  },
-                ),
-              ),
+              // Align(
+              //   alignment: Alignment.centerRight,
+              //   child: DropdownButton(
+              //     value: sortBy,
+              //     items: [
+              //       DropdownMenuItem(child: Text("publishedAt"),value: "publishedAt"),
+              //       DropdownMenuItem(child: Text("popularity"),value:"popularity" ,),
+              //       DropdownMenuItem(child: Text("relevancy"),value: "relevancy",),
+              //     ],
+              //     onChanged: (value){
+              //       setState(() {
+              //         sortBy=value!;
+              //       });
+              //     },
+              //   ),
+              // ),
               FutureBuilder<NewsModel>(
-                future: newsProvider.getNewsData(pageNo,sortBy),
+                future: newsProvider.getNewsData(pageNo),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return Center(
@@ -172,14 +172,14 @@ class _HomePageState extends State<HomePage> {
                                             Row(
                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                               children: [
-                                                InkWell(
-                                                  onTap: (){
-                                                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WebViewDetails(
-                                                      articles: snapshot.data!.articles![index],
-                                                    )));
-                                                  },
-                                                  child: Icon(Icons.ac_unit),
-                                                ),
+                                                // InkWell(
+                                                //   onTap: (){
+                                                //     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>WebViewDetails(
+                                                //       articles: snapshot.data!.articles![index],
+                                                //     )));
+                                                //   },
+                                                //   child: Icon(Icons.ac_unit),
+                                                // ),
                                                 Text(
                                                     "${snapshot.data!.articles![index].publishedAt}"),
                                               ],
