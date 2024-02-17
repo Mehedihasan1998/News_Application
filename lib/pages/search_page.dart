@@ -88,7 +88,7 @@ class _SearchPageState extends State<SearchPage> {
                         )));
                       },
                       child: Container(
-                        color: Colors.white,
+                        color: Colors.blueGrey,
                         height: 130,
                         padding: const EdgeInsets.all(8.0),
                         child: Stack(
@@ -96,7 +96,7 @@ class _SearchPageState extends State<SearchPage> {
                             Container(
                               height: 60,
                               width: 60,
-                              color: Colors.blueGrey,
+                              color: Colors.black,
                             ),
                             Positioned(
                               right: 0,
@@ -104,7 +104,7 @@ class _SearchPageState extends State<SearchPage> {
                               child: Container(
                                 height: 50,
                                 width: 50,
-                                color: Colors.blueGrey,
+                                color: Colors.black,
                               ),
                             ),
                             Container(

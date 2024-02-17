@@ -24,9 +24,9 @@ class NewsDetails extends StatelessWidget {
       appBar: AppBar(
         title: Text("${articles!.source!.name ?? ""}"),
         actions: [
-          // IconButton(onPressed: (){
-          //   share();
-          // }, icon: Icon(Icons.share))
+          IconButton(onPressed: (){
+            share();
+          }, icon: Icon(Icons.share))
         ],
       ),
       body: Column(
@@ -54,8 +54,8 @@ class NewsDetails extends StatelessWidget {
                 SizedBox(height: 10,),
                 Text("${articles!.content}"),
                 InkWell(
-
-                    child: Text("see more", style: TextStyle(color: Colors.blue,),)),
+                  onTap: (){},
+                    child: Text("see more", style: TextStyle(color: Colors.white,),)),
               ],
             ),
           )
