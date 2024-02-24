@@ -10,6 +10,14 @@ class NewsProvider with ChangeNotifier{
     newsModel=await CustomeHttpRequest.fetchHomeData(pageNo,sortBy);
     return newsModel!;
   }
+  Future<NewsModel> getTechnoData(int pageNo,String sortBy)async{
+    newsModel=await CustomeHttpRequest.fetchTechData(pageNo,sortBy);
+    return newsModel!;
+  }
+  Future<NewsModel> getGameData(int pageNo,String sortBy)async{
+    newsModel=await CustomeHttpRequest.fetchSportsData(pageNo,sortBy);
+    return newsModel!;
+  }
 
 }
 
