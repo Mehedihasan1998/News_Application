@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-String maleAvaterImage = "https://w7.pngwing.com/pngs/7/618/png-transparent-man-illustration-avatar-icon-fashion-men-avatar-face-fashion-girl-heroes-thumbnail.png";
-String newsImage = "https://t4.ftcdn.net/jpg/03/00/85/23/360_F_300852364_qSrtNxY6pokaVR7er7knpb8AyYJSxtUd.jpg";
+String maleAvaterImage = "https://static.vecteezy.com/system/resources/previews/024/183/535/original/male-avatar-portrait-of-a-young-man-with-glasses-illustration-of-male-character-in-modern-color-style-vector.jpg";
+String newsImage = "https://images.pexels.com/photos/935979/pexels-photo-935979.jpeg?cs=srgb&dl=pexels-nappy-935979.jpg&fm=jpg";
 Color appBarColor = Colors.blueGrey;
 
-Color newsTitleColor = Colors.black;
+Color newsTitleColor = Colors.redAccent;
 double newsTitleFontSize = 25;
 double appTitleFontSize = 22;
 

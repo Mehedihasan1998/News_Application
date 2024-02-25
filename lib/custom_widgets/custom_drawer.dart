@@ -1,4 +1,4 @@
-
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:newapp/constants/constants.dart';
 class CustomDrawer extends StatelessWidget {
@@ -7,16 +7,16 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      // backgroundColor: Color(0xff512DA8),
+      backgroundColor: Colors.redAccent,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-              accountName: const Text("Md. Mehedi Hasan", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),),
-              accountEmail: const Text("mehedi5477@gmail.com", style: TextStyle(fontSize: 15, color: Colors.black),),
+              accountName: const Text("Md. Mehedi Hasan", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),),
+              accountEmail: const Text("mehedi5477@gmail.com", style: TextStyle(fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
-                child: Image.network("${maleAvaterImage}"),
+                child: Image.network("${maleAvaterImage}",),
               ),
             ),
             decoration: BoxDecoration(
@@ -25,28 +25,32 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.person_2_outlined, color: appBarColor,),
-            title: Text("Profile",),
+            leading: Icon(Icons.person_2_outlined, color: Colors.white,),
+            title: Text("Profile", style: TextStyle(color: Colors.white),),
           ),
           ListTile(
-            leading: Icon(Icons.settings, color: appBarColor,),
-            title: Text("Settings",),
+            leading: Icon(Icons.settings, color: Colors.white,),
+            title: Text("Settings", style: TextStyle(color: Colors.white)),
           ),
           ListTile(
-            leading: Icon(Icons.share, color: appBarColor,),
-            title: Text("Share"),
+            leading: Icon(Icons.share, color: Colors.white,),
+            title: Text("Share", style: TextStyle(color: Colors.white)),
           ),
           ListTile(
-            leading: Icon(Icons.notifications_none_outlined, color: appBarColor,),
-            title: Text("Notifications"),
+            leading: Icon(Icons.notifications_none_outlined, color: Colors.white,),
+            title: Text("Notifications", style: TextStyle(color: Colors.white)),
           ),
           ListTile(
-            leading: Icon(Icons.history, color: appBarColor,),
-            title: Text("History"),
+            leading: Icon(Icons.history, color: Colors.white,),
+            title: Text("History" ,style: TextStyle(color: Colors.white)),
           ),
           ListTile(
-            leading: Icon(Icons.logout, color: appBarColor,),
-            title: Text("Log out"),
+            leading: Icon(Icons.category_outlined, color: Colors.white,),
+            title: Text("Category" ,style: TextStyle(color: Colors.white)),
+          ),
+          ListTile(
+            leading: Icon(Icons.logout, color: Colors.white,),
+            title: Text("Log out", style: TextStyle(color: Colors.white)),
           ),
         ],
       ),
