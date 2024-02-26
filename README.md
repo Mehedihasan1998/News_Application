@@ -5,5 +5,4 @@
 - Read news of different categories (Politics, Sports, Technology)
 
 ## Project shots
-![home](https://github.com/Mehedihasan1998/News_Application/assets/56060082/8412b92a-b04c-4c42-b9b5-2a1e9a79a099)  ![drawer](https://github.com/Mehedihasan1998/News_Application/assets/56060082/7ca839a0-2135-471f-8170-6cdea2e40696) 
-![search](https://github.com/Mehedihasan1998/News_Application/assets/56060082/f10b60d9-c147-4a03-bd9b-a6e4ab3b15d6)  ![news details](https://github.com/Mehedihasan1998/News_Application/assets/56060082/3eb5f3c4-31d3-4558-9492-bc781f2e1952)  ![share](https://github.com/Mehedihasan1998/News_Application/assets/56060082/2415ad9e-050f-4054-87f5-0736a6732914) 
+![home](https://github.com/Mehedihasan1998/News_Application/assets/56060082/d391d8f4-a9cb-4922-982e-96aa158559c0)  ![drawer](https://github.com/Mehedihasan1998/News_Application/assets/56060082/43f799f7-2246-4bb1-8e59-dca3a2314d1f) ![search](https://github.com/Mehedihasan1998/News_Application/assets/56060082/61d26f4e-2565-4862-a294-b2de83c62b53) ![category](https://github.com/Mehedihasan1998/News_Application/assets/56060082/69cca05d-fce0-4133-a630-e596a3b3650c) ![profile](https://github.com/Mehedihasan1998/News_Application/assets/56060082/961a90c9-876e-4bdd-ab61-45b5be446593)
