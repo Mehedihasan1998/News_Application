@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:newapp/constants/constants.dart';
 import 'package:newapp/http/custom_http.dart';
 import 'package:newapp/model/news_model.dart';
 import 'package:newapp/pages/news_details.dart';
@@ -19,8 +20,20 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: Text("🄰🄱🄲 🄽🄴🅆🅂", style: TextStyle(color: Colors.white),),
+          titleTextStyle: TextStyle(
+              color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+          elevation: 5,
+          backgroundColor: newsTitleColor,
+          centerTitle: true,
+          iconTheme: IconThemeData(color: Colors.white),
+          actions: [
+            Icon(Icons.person_2_outlined, size: 28,),
+          ],
+        ),
         body: Container(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(15),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -34,6 +47,7 @@ class _SearchPageState extends State<SearchPage> {
                   } ,
                   decoration: InputDecoration(
                       prefixIcon: Icon(Icons.search),
+                      hintText: "Search",
                       suffix: IconButton(
                         onPressed: () {
                           searchController.clear();
@@ -46,7 +60,7 @@ class _SearchPageState extends State<SearchPage> {
                       )),
                 ),
                 SizedBox(
-                  height: 19,
+                  height: 15,
                 ),
                 MasonryGridView.count(
                   shrinkWrap: true,
@@ -77,10 +91,9 @@ class _SearchPageState extends State<SearchPage> {
                 SizedBox(height: 20,),
 
                 newsModel?.articles ==null? SizedBox(height: 0,):   ListView.builder(
-                  itemCount: newsModel!.articles!.length,
-                  shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (context,index){
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
                     return InkWell(
                       onTap: (){
                         Navigator.of(context).push(MaterialPageRoute(builder: (context)=>NewsDetails(
@@ -88,70 +101,33 @@ class _SearchPageState extends State<SearchPage> {
                         )));
                       },
                       child: Container(
-                        color: Colors.blueGrey,
-                        height: 130,
-                        padding: const EdgeInsets.all(8.0),
-                        child: Stack(
-                          children: [
-                            Container(
-                              height: 60,
-                              width: 60,
-                              color: Colors.black,
-                            ),
-                            Positioned(
-                              right: 0,
-                              bottom: 0,
-                              child: Container(
-                                height: 50,
-                                width: 50,
-                                color: Colors.black,
+                          margin: EdgeInsets.all(10),
+                          padding: EdgeInsets.all(10),
+                          height: MediaQuery.of(context).size.height * 0.45,
+                          width: double.infinity,
+                          color: Colors.white,
+                          child: Column(
+                            children: [
+                              CachedNetworkImage(
+                                imageUrl:
+                                "${newsModel!.articles![index].urlToImage}",
+                                errorWidget: (context, url, error) => Image.network(
+                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOmYqa4Vpnd-FA25EGmYMiDSWOl9QV8UN1du_duZC9mQ&s"),
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                                height: MediaQuery.of(context).size.height * 0.30,
                               ),
-                            ),
-                            Container(
-                              color: Colors.white,
-                              padding: EdgeInsets.all(14),
-                              margin: EdgeInsets.all(14),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    flex: 3,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(6),
-                                      child: CachedNetworkImage(
-                                        imageUrl:
-                                        "${newsModel!.articles![index].urlToImage}",
-                                        placeholder: (context, url) =>
-                                            CircularProgressIndicator(),
-                                        errorWidget: (context, url, error) =>
-                                            Image.network(
-                                                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOmYqa4Vpnd-FA25EGmYMiDSWOl9QV8UN1du_duZC9mQ&s"),
-                                      ),
-                                      //Image(image: NetworkImage("${newsModel!.articles![index].urlToImage}",))
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 8,
-                                  ),
-                                  Expanded(
-                                      flex: 10,
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            "${newsModel!.articles![index].title}",
-                                            maxLines: 2,
-                                          ),
-                                          Text(
-                                              "${newsModel!.articles![index].publishedAt}")
-                                        ],
-                                      ))
-                                ],
+                              Text(
+                                "${newsModel!.articles![index].title}",
+                                style: myStyle(22, Colors.black, FontWeight.bold),
+                                maxLines: 2,
                               ),
-                            )
-                          ],
-                        ),
-                      ),
+                              Divider(thickness: 2, color: newsTitleColor,)
+                            ],
+                          )),
                     );
                   },
+                  itemCount: newsModel!.articles!.length,
                 )
               ],
             ),
@@ -165,7 +141,6 @@ class _SearchPageState extends State<SearchPage> {
     "World",
     "Health",
     "Finance",
-    "Bitcoin",
     "Football",
     "Cricket",
     "Sports",
