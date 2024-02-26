@@ -1,6 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:newapp/constants/constants.dart';
+import 'package:newapp/pages/categories.dart';
+import 'package:newapp/pages/profile%20page.dart';
+import 'package:newapp/pages/search_page.dart';
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
 
@@ -27,10 +30,20 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.person_2_outlined, color: Colors.white,),
             title: Text("Profile", style: TextStyle(color: Colors.white),),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>ProfilePage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.settings, color: Colors.white,),
             title: Text("Settings", style: TextStyle(color: Colors.white)),
+          ),
+          ListTile(
+            leading: Icon(Icons.search, color: Colors.white,),
+            title: Text("Search", style: TextStyle(color: Colors.white)),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>SearchPage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.share, color: Colors.white,),
@@ -47,6 +60,9 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.category_outlined, color: Colors.white,),
             title: Text("Category" ,style: TextStyle(color: Colors.white)),
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>CategoriesPage()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.logout, color: Colors.white,),

@@ -26,7 +26,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
           length: 6,
           initialIndex: 0,
           child: Scaffold(
-            drawer: CustomDrawer(),
+
             appBar: AppBar(
               title: Text("🄰🄱🄲 🄽🄴🅆🅂", style: TextStyle(color: Colors.white),),
               titleTextStyle: TextStyle(

@@ -38,12 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         iconTheme: IconThemeData(color: Colors.white),
         actions: [
-          IconButton(onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>ProfilePage()));
-          }, icon: Icon(Icons.person_2_outlined)),
-          IconButton(onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>SearchPage()));
-          }, icon: Icon(Icons.search))
+          Icon(Icons.notifications_none_outlined),
         ],
       ),
       body: ListView(

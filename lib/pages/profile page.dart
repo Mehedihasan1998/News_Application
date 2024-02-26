@@ -17,9 +17,7 @@ class ProfilePage extends StatelessWidget {
             centerTitle: true,
             iconTheme: IconThemeData(color: Colors.white),
             actions: [
-              IconButton(onPressed: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>SearchPage()));
-              }, icon: Icon(Icons.search))
+              Icon(Icons.notifications_none_outlined)
             ],
           ),
           body: Container(
