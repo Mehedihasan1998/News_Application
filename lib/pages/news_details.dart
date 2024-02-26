@@ -61,7 +61,10 @@ class NewsDetails extends StatelessWidget {
                 ),
                 articles!.urlToImage == null? Image.network(
                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOmYqa4Vpnd-FA25EGmYMiDSWOl9QV8UN1du_duZC9mQ&s",):
-                Image.network('${articles!.urlToImage}'),
+                Image.network('${articles!.urlToImage}',
+                  height: MediaQuery.of(context).size.height*0.35,
+                  width: MediaQuery.of(context).size.width*1,
+                  fit: BoxFit.cover,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: Column(
