@@ -28,9 +28,7 @@ class _SearchPageState extends State<SearchPage> {
           backgroundColor: newsTitleColor,
           centerTitle: true,
           iconTheme: IconThemeData(color: Colors.white),
-          actions: [
-            Icon(Icons.person_2_outlined, size: 28,),
-          ],
+          
         ),
         body: Container(
           padding: EdgeInsets.all(15),

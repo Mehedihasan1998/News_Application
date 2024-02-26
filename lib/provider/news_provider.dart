@@ -18,6 +18,18 @@ class NewsProvider with ChangeNotifier{
     newsModel=await CustomeHttpRequest.fetchSportsData(pageNo,sortBy);
     return newsModel!;
   }
+  Future<NewsModel> getPoliticData(int pageNo,String sortBy)async{
+    newsModel=await CustomeHttpRequest.fetchPoliticsData(pageNo,sortBy);
+    return newsModel!;
+  }
+  Future<NewsModel> getHealthRelatedData(int pageNo,String sortBy)async{
+    newsModel=await CustomeHttpRequest.fetchHealthData(pageNo,sortBy);
+    return newsModel!;
+  }
+  Future<NewsModel> getScienceData(int pageNo,String sortBy)async{
+    newsModel=await CustomeHttpRequest.fetchScientificData(pageNo,sortBy);
+    return newsModel!;
+  }
 
 }
 
