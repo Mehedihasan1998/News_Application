@@ -40,6 +40,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
               ],
             ),
             body: Column(
+              // commet
               children: [
                 TabBar(
                   isScrollable: true,
